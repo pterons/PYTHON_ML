@@ -42,6 +42,10 @@ for k in range(1, 50):
     # KNN 으로 Train 데이터 세트를 학습한다.
     knn = KNeighborsClassifier(n_neighbors=k, p=2, metric='minkowski')
     knn.fit(trainX, trainY)
+    # 여기서 p=1이면 맨하튼 거리를 나타내며, p=2이면 유클리드 거리를 나타낸다.
+    # KNeighborsClassifier(n_neighbors=5, p=2, metric='minkowski')를 해석해보자면
+    # 5개의 이웃과의 거리를 기준으로 분류하는 것을 말하고, p=2, metric='minkowski'는
+    # 거리측정을 유클리드 거리로 한다는 의미이다.
     
     # Test 세트의 Feature에 대한 정확도
     predY = knn.predict(testX)
