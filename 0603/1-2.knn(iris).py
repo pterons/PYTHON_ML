@@ -30,6 +30,7 @@ knn.fit(trainX, trainY)
 # Test 세트의 Feature에 대한 class를 추정하고, 정확도를 계산한다
 # accuracy = knn.score(testX, testY)와 동일함.
 predY = knn.predict(testX)
+# 테스트 데이터에 대해 predict 메서드를 호출해 예측, 테스트 세트의 각 데이터 포인트에 대해 훈련 세트에서 가장 가까운 이웃을 계산한 다음 가장 많은 클래스를 찾는다.
 accuracy = (testY == predY).mean()
 print()
 print("* 시험용 데이터로 측정한 정확도 = %.2f" % accuracy)
